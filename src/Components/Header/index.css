@@ -1,0 +1,77 @@
+/* >>>>>>>>>>>>  DeskTop View >>>>>>>>>>> */
+.nav_deskTop_view {
+  padding: 15px 50px 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #272727fd;
+}
+
+.header_website_logo {
+  width: 150px;
+}
+
+.home_jobs_options_container {
+}
+
+.link_option {
+  margin-right: 10px;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.Logout_btn {
+  border-radius: 5px;
+  padding: 8px 14px 8px 14px;
+  color: #ffffff;
+  font-size: 15px;
+  border: none;
+  background-color: rgb(44, 44, 165);
+}
+
+/* >>>>>>>>>>>>  Mobile View >>>>>>>>>>> */
+
+.nav_mobile_view {
+  padding: 15px 50px 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #272727fd;
+}
+
+.home_jobs_logOut_icons_container {
+}
+
+.link_icon {
+  /* text-decoration: none */
+  margin-left: 25px;
+}
+
+.icon {
+  height: 30px;
+  width: 30px;
+  color: #ffffff;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  margin-left: 25px;
+}
+
+@media (max-width: 767px) {
+  .nav_deskTop_view {
+    display: none;
+  }
+  .header_website_logo {
+    width: 100px;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav_mobile_view {
+    display: none;
+  }
+}
