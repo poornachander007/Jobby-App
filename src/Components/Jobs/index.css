@@ -1,0 +1,149 @@
+.jobs_page {
+  background-color: black;
+  min-height: 100vh;
+  padding: 30px 50px 30px 50px;
+}
+
+.ul_jobs_container {
+  width: 100%;
+  padding: 0;
+}
+
+/* >>>>>>>>>>>>>>> renderTypeOfEmploymentItems >>>>>>>>> */
+
+.typeOfEmployment_container {
+  width: 100%;
+  color: #ffffff;
+}
+
+.hr {
+  width: 100%;
+}
+
+.typeOfEmployment_heading {
+  font-size: 20px;
+}
+
+.ul_typeOfEmploymentsList {
+  padding: 0;
+  margin: 0;
+}
+
+.li_checkBox_label_container {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  margin: 8px 0px 8px 0px;
+}
+
+.check_box {
+  margin-right: 10px;
+  /* background-color: white; */
+}
+
+.label {
+  font-size: 15px;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>RenderInputElement>>>>>>>>>>> */
+.form_input_container {
+  width: 100%;
+  border: 1px solid #9b9b9e;
+  display: flex;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.input {
+  font-size: 18px;
+  color: white;
+  flex-grow: 1;
+  outline: none;
+  border: none;
+  padding: 5px 10px 5px 10px;
+  background-color: transparent;
+}
+
+.search_btn {
+  border-radius: 0px 4px 4px 0px;
+  border: none;
+  background-color: #272727;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon_search {
+  color: #ffffff;
+  height: 20px;
+  width: 20px;
+}
+
+.mobile_view {
+  width: 100%;
+}
+
+.deskTop_view {
+  width: 100%;
+  display: flex;
+}
+
+.leftSide_container {
+  width: 30%;
+}
+
+.rightSide_container {
+  width: 70%;
+  margin-left: 20px;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>RenderFailureView>>>>>>>>>>>> */
+.failure_image_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.failure_image {
+  width: 40%;
+}
+
+.failure_heading {
+  font-size: 36px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.failure_para {
+  font-size: 15px;
+  color: #726a6a;
+  font-weight: 600;
+}
+
+.btn_retry {
+  border: none;
+  border-radius: 8px;
+  background-color: blue;
+  color: #ffffff;
+  padding: 10px 25px 10px 25px;
+}
+
+/* >>>>>>>>>>>>>>> Media Queries >>>>>>>>>>>>>>>>>>> */
+
+@media (max-width: 767px) {
+  .deskTop_view {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .mobile_view {
+    display: none;
+  }
+  .form_input_container {
+    width: 60%;
+  }
+}
