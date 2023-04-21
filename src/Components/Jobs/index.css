@@ -4,6 +4,14 @@
   padding: 30px 50px 30px 50px;
 }
 
+@media (max-width: 767px) {
+  .jobs_page {
+    background-color: black;
+    min-height: 100vh;
+    padding: 30px 20px 30px 20px;
+  }
+}
+
 .ul_jobs_container {
   width: 100%;
   padding: 0;
@@ -145,5 +153,15 @@
   }
   .form_input_container {
     width: 60%;
+  }
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>    media Queries  >>>>>>>>>>>>>>>> */
+
+@media (max-width: 767px) {
+  .noJobs_found_img {
+    width: 100%;
+    margin: 40px;
+    margin-left: 0;
   }
 }

@@ -137,7 +137,7 @@ class JobItemDetails extends Component {
 
     return (
       <>
-        <div className="li_jobItem_container">
+        <div className="li_jobItem_container detailsCardAndSimilarCard">
           <div className="header_container_title_img_rating">
             <img
               className="jobItem_image"
@@ -203,7 +203,9 @@ class JobItemDetails extends Component {
             />
           </div>
         </div>
-        <h1 className="label_to_jobDescription">Similar Jobs</h1>
+        <h1 className="label_to_jobDescription similarJobs_heading">
+          Similar Jobs
+        </h1>
         <ul className="ul_similar_jobs_container">
           {similarJobs.map(similar => (
             <SimilarJobItem key={similar.id} details={similar} />

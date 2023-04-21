@@ -141,7 +141,7 @@ class Login extends Component {
     return (
       <div className="login_page">
         {this.renderDeskTopView()}
-        {this.renderMobileView()}
+        {/* {this.renderMobileView()} */}
       </div>
     )
   }

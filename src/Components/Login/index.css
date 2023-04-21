@@ -89,7 +89,7 @@
 
 /* >>>>>>>>>>>>>>>login_page>>>>>>>>>>>>>>>>>> */
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
   .desktop_view_login {
     display: none;
   }
@@ -101,5 +101,15 @@
 @media (min-width: 768px) {
   .mobile_view_login {
     display: none;
+  }
+} */
+
+@media (max-width: 767px) {
+  .desktop_view_login {
+    width: 80%;
+  }
+  .websiteLogo {
+    width: 150px;
+    padding: 30px;
   }
 }

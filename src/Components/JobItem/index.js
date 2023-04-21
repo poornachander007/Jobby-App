@@ -1,8 +1,8 @@
+import './index.css'
 import {Link} from 'react-router-dom'
 import {AiFillStar} from 'react-icons/ai'
 import {MdLocationOn} from 'react-icons/md'
 import {FaSuitcase} from 'react-icons/fa'
-import './index.css'
 
 const JobItem = props => {
   const {details} = props

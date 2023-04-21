@@ -277,7 +277,11 @@ class Jobs extends Component {
 
   renderNoJobsView = () => (
     <div className="failure_image_container">
-      <img className="failure_image" alt="no jobs" src={noJobsUrl} />
+      <img
+        className="failure_image noJobs_found_img"
+        alt="no jobs"
+        src={noJobsUrl}
+      />
       <h1 className="failure_heading">No Jobs Found</h1>
       <p className="failure_para">
         We could not find any jobs. try other filters.

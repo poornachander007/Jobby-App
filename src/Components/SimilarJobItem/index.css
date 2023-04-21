@@ -3,3 +3,11 @@
   margin-right: 30px;
   width: 40%;
 }
+
+@media (max-width: 767px) {
+  .similar_job_card {
+    margin-bottom: 20px;
+    margin-right: 0;
+    width: 100%;
+  }
+}
