@@ -152,7 +152,10 @@ class Jobs extends Component {
       <h1 className="typeOfEmployment_heading">Type of Employment</h1>
       <ul className="ul_typeOfEmploymentsList">
         {employmentTypesList.map(item => (
-          <li className="li_checkBox_label_container">
+          <li
+            key={item.employmentTypeId}
+            className="li_checkBox_label_container"
+          >
             <input
               onClick={this.onClickToggleCheckBox}
               className="check_box"
@@ -183,7 +186,7 @@ class Jobs extends Component {
       <h1 className="typeOfEmployment_heading">Salary Range</h1>
       <ul className="ul_typeOfEmploymentsList">
         {salaryRangesList.map(item => (
-          <li className="li_checkBox_label_container">
+          <li key={item.salaryRangeId} className="li_checkBox_label_container">
             <input
               onClick={this.onClickRadioButton}
               name="salaryRange"
@@ -261,7 +264,7 @@ class Jobs extends Component {
   renderFailureView = () => (
     <div className="failure_image_container">
       <img className="failure_image" alt="failure view" src={failureUrl} />
-      <h1 className="failure_heading">Oops! Somthing Went Wrong</h1>
+      <h1 className="failure_heading">Oops! Something Went Wrong</h1>
       <p className="failure_para">
         We cannot seem to find the page you are looking for
       </p>
@@ -284,7 +287,7 @@ class Jobs extends Component {
       />
       <h1 className="failure_heading">No Jobs Found</h1>
       <p className="failure_para">
-        We could not find any jobs. try other filters.
+        We could not find any jobs. Try other filters
       </p>
     </div>
   )
