@@ -24,7 +24,11 @@ const JobItem = props => {
     <Link to={`/jobs/${id}`} className="link_to_jobDetails">
       <li className="li_jobItem_container">
         <div className="header_container_title_img_rating">
-          <img className="jobItem_image" alt="" src={companyLogoUrl} />
+          <img
+            className="jobItem_image"
+            alt="company logo"
+            src={companyLogoUrl}
+          />
           <div className="title_rating_container">
             <h1 className="title">{title}</h1>
             <p className="rating">
@@ -46,9 +50,9 @@ const JobItem = props => {
           <p className="package">{packagePerAnnum}</p>
         </div>
         <hr className="hr" />
-        <label className="label_to_jobDescription" htmlFor="jobDescription">
+        <h1 className="label_to_jobDescription" htmlFor="jobDescription">
           Description
-        </label>
+        </h1>
         <p id="jobDescription" className="jobDescription">
           {jobDescription}
         </p>

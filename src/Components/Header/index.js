@@ -19,11 +19,13 @@ const Header = props => {
   }
   const renderDesktopView = () => (
     <nav className="nav_deskTop_view">
-      <img
-        className="header_website_logo"
-        alt="website logo"
-        src={websiteLogo}
-      />
+      <Link className="link_option" to="/">
+        <img
+          className="header_website_logo"
+          alt="website logo"
+          src={websiteLogo}
+        />
+      </Link>
       <div className="home_jobs_options_container">
         <Link className="link_option" to="/">
           Home
@@ -40,24 +42,32 @@ const Header = props => {
 
   const renderMobileView = () => (
     <nav className="nav_mobile_view">
-      <img
-        className="header_website_logo"
-        alt="website logo"
-        src={websiteLogo}
-      />
-      <div className="home_jobs_logOut_icons_container">
-        <Link className="link_icon" to="/">
-          <AiFillHome className="icon" />
-        </Link>
-        <Link className="link_icon" to="/jobs">
-          <FaSuitcase className="icon" />
-        </Link>
+      <Link className="link_icon" to="/">
+        <img
+          className="header_website_logo"
+          alt="website logo"
+          src={websiteLogo}
+        />
+      </Link>
+      <ul className="home_jobs_logOut_icons_container">
+        <li>
+          <Link className="link_icon" to="/">
+            <AiFillHome className="icon" />
+          </Link>
+        </li>
+        <li>
+          <Link className="link_icon" to="/jobs">
+            <FaSuitcase className="icon" />
+          </Link>
+        </li>
         {/* <Link className="link_icon" to="/login"> */}
-        <button onClick={onClickLogout} type="button">
-          <FiLogOut className="icon" />
-        </button>
+        <li>
+          <button onClick={onClickLogout} type="button">
+            <FiLogOut className="icon" />
+          </button>
+        </li>
         {/* </Link> */}
-      </div>
+      </ul>
     </nav>
   )
 

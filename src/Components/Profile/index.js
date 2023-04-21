@@ -104,9 +104,9 @@ class Profile extends Component {
   render() {
     return (
       <>
-        {/* {this.renderComponentBasedOnApiStatus()} */}
+        {this.renderComponentBasedOnApiStatus()}
         {/* {this.renderLoadingView()} */}
-        {this.renderFailureView()}
+        {/* {this.renderFailureView()} */}
       </>
     )
   }

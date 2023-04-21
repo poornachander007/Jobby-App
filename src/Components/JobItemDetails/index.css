@@ -1,3 +1,67 @@
 * {
   color: #ffffff;
 }
+
+.description_companyWebsiteUrl_and_icon_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.companyWebsiteUrl_and_icon_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: #6366f1;
+}
+.website_link_icon {
+  margin-left: 5px;
+  color: #6366f1 !important;
+}
+
+.ul_skills_list {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.li_skill_item {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  width: 30%;
+  margin-bottom: 20px;
+}
+.image_skill_item {
+  height: 60px;
+  width: 60px;
+  margin-right: 20px;
+}
+
+.name_skill {
+}
+
+.life_at_company_container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.lifeatdescription {
+  width: 50%;
+}
+.image_life_at_company {
+  width: 50%;
+  padding-left: 50px;
+}
+
+/* >>>>>>>>>>>>>>>>>Similar Jobs UL>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.ul_similar_jobs_container {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  /* justify-content: space-between; */
+  flex-wrap: wrap;
+}

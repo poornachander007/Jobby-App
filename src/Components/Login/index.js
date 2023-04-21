@@ -7,7 +7,7 @@ const websiteLogo = 'https://assets.ccbp.in/frontend/react-js/logo-img.png'
 //  alt should be website logo
 
 class Login extends Component {
-  state = {username: '', password: '', errorMsg: ''}
+  state = {username: '', password: '', isError: false, errorMsg: ''}
 
   successView = jwtToken => {
     const {history} = this.props
@@ -17,8 +17,9 @@ class Login extends Component {
     history.replace('/')
   }
 
+  // --------changed
   failureView = errorMsg => {
-    this.setState({errorMsg})
+    this.setState({isError: true, errorMsg})
   }
 
   onSubmitLogin = async event => {
@@ -51,7 +52,7 @@ class Login extends Component {
   }
 
   renderDeskTopView = () => {
-    const {username, password, errorMsg} = this.state
+    const {username, password, errorMsg, isError} = this.state
     return (
       <div className="desktop_view_login">
         <form className="login_form" onSubmit={this.onSubmitLogin}>
@@ -61,6 +62,7 @@ class Login extends Component {
               USERNAME
             </label>
             <input
+              type="text"
               onChange={this.onChangeUsername}
               className="login_input"
               id="username"
@@ -73,6 +75,7 @@ class Login extends Component {
               PASSWORD
             </label>
             <input
+              type="password"
               onChange={this.onChangePassword}
               className="login_input"
               id="password"
@@ -83,14 +86,14 @@ class Login extends Component {
           <button type="submit" className="login_btn">
             Login
           </button>
-          {errorMsg !== '' && <p className="errorMsg">*{errorMsg}</p>}
+          {isError && <p className="errorMsg">*{errorMsg}</p>}
         </form>
       </div>
     )
   }
 
   renderMobileView = () => {
-    const {username, password, errorMsg} = this.state
+    const {username, password, errorMsg, isError} = this.state
     return (
       <div className="mobile_view_login">
         <form className="login_form" onSubmit={this.onSubmitLogin}>
@@ -100,6 +103,7 @@ class Login extends Component {
               USERNAME
             </label>
             <input
+              type="text"
               onChange={this.onChangeUsername}
               className="login_input"
               id="username"
@@ -112,6 +116,7 @@ class Login extends Component {
               PASSWORD
             </label>
             <input
+              type="password"
               onChange={this.onChangePassword}
               className="login_input"
               id="password"
@@ -122,7 +127,7 @@ class Login extends Component {
           <button type="submit" className="login_btn">
             Login
           </button>
-          {errorMsg !== '' && <small className="errorMsg">*{errorMsg}</small>}
+          {isError && <p className="errorMsg">*{errorMsg}</p>}
         </form>
       </div>
     )

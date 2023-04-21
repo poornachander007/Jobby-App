@@ -2,7 +2,7 @@ import Cookies from 'js-cookie'
 import {Component} from 'react'
 import Loader from 'react-loader-spinner'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
-import {BiSearchAlt2} from 'react-icons/bi'
+import {BsSearch} from 'react-icons/bs'
 import Header from '../Header'
 import Profile from '../Profile'
 import JobItem from '../JobItem'
@@ -160,8 +160,10 @@ class Jobs extends Component {
               key={item.employmentTypeId}
               type="checkbox"
             />
-            {/* htmlFor={item.employmentTypeId} */}
-            <label className="label">{item.label}</label>
+
+            <label htmlFor={item.employmentTypeId} className="label">
+              {item.label}
+            </label>
           </li>
         ))}
       </ul>
@@ -191,7 +193,9 @@ class Jobs extends Component {
               type="radio"
             />
             {/* htmlFor={item.salaryRangeId} */}
-            <label className="label">{item.label}</label>
+            <label htmlFor={item.salaryRangeId} className="label">
+              {item.label}
+            </label>
           </li>
         ))}
       </ul>
@@ -219,11 +223,12 @@ class Jobs extends Component {
           placeholder="Search"
         />
         <button
+          data-testid="searchButton"
           onClick={this.onClickSearchIcon}
           className="search_btn"
           type="button"
         >
-          <BiSearchAlt2 className="icon_search" />
+          <BsSearch className="icon_search" />
         </button>
       </div>
     )

@@ -75,3 +75,8 @@ button {
     display: none;
   }
 }
+
+li {
+  width: 100%;
+  list-style-type: none;
+}

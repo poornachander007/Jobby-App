@@ -6,6 +6,7 @@ import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import {AiFillStar} from 'react-icons/ai'
 import {MdLocationOn} from 'react-icons/md'
 import {FaSuitcase} from 'react-icons/fa'
+import {FiExternalLink} from 'react-icons/fi'
 
 import Header from '../Header'
 import SimilarJobItem from '../SimilarJobItem'
@@ -29,9 +30,9 @@ class JobItemDetails extends Component {
     this.getJobDetails()
   }
 
-  //   onClickRetryBtn = () => {
-  //     this.getJobDetails()
-  //   }
+  onClickRetryBtn = () => {
+    this.getJobDetails()
+  }
 
   getJobDetails = async () => {
     this.setState({apiStatus: apiStatusViews.inProgress})
@@ -67,8 +68,8 @@ class JobItemDetails extends Component {
         })),
         title: jobDetails.title,
         lifeAtCompany: {
-          description: jobDetails.description,
-          imageUrl: jobDetails.image_url,
+          description: jobDetails.life_at_company.description,
+          imageUrl: jobDetails.life_at_company.image_url,
         },
         location: jobDetails.location,
         packagePerAnnum: jobDetails.package_per_annum,
@@ -103,7 +104,7 @@ class JobItemDetails extends Component {
   renderFailureView = () => (
     <div className="failure_image_container">
       <img className="failure_image" alt="failure view" src={failureUrl} />
-      <h1 className="failure_heading">Oops! Somthing Went Wrong</h1>
+      <h1 className="failure_heading">Oops! Something Went Wrong</h1>
       <p className="failure_para">
         We cannot seem to find the page you are looking for
       </p>
@@ -132,39 +133,83 @@ class JobItemDetails extends Component {
       rating,
       title,
     } = jobDetails
+    console.log(skills)
 
     return (
-      <div className="li_jobItem_container">
-        <div className="header_container_title_img_rating">
-          <img className="jobItem_image" alt="" src={companyLogoUrl} />
-          <div className="title_rating_container">
-            <h1 className="title">{title}</h1>
-            <p className="rating">
-              <AiFillStar className="icon_rating_star" /> {rating}
+      <>
+        <div className="li_jobItem_container">
+          <div className="header_container_title_img_rating">
+            <img
+              className="jobItem_image"
+              alt="job details company logo"
+              src={companyLogoUrl}
+            />
+            <div className="title_rating_container">
+              <h1 className="title">{title}</h1>
+              <p className="rating">
+                <AiFillStar className="icon_rating_star" /> {rating}
+              </p>
+            </div>
+          </div>
+          <div className="location_employmentType_package_container">
+            {/* <div className="location_employmentType_container"> */}
+            <p className="locationOrEmploymentType_paraAnd_icon">
+              <MdLocationOn className="icon_locationOrEmployeeType" />
+              {location}
             </p>
+            <p className="locationOrEmploymentType_paraAnd_icon">
+              <FaSuitcase className="icon_locationOrEmployeeType" />
+              {employmentType}
+            </p>
+            {/* </div> */}
+            <p className="package">{packagePerAnnum}</p>
+          </div>
+          <hr className="hr" />
+          <div className="description_companyWebsiteUrl_and_icon_container">
+            <h1 className="label_to_jobDescription">Description</h1>
+            <a
+              className="companyWebsiteUrl_and_icon_container"
+              href={companyWebsiteUrl}
+            >
+              Visit
+              <FiExternalLink className="website_link_icon" />
+            </a>
+          </div>
+          <p id="jobDescription" className="jobDescription">
+            {jobDescription}
+          </p>
+          <h1 className="label_to_jobDescription">Skills</h1>
+          <ul className="ul_skills_list">
+            {skills.map(item => (
+              <li key={item.name} className="li_skill_item">
+                <img
+                  className="image_skill_item"
+                  src={item.imageUrl}
+                  alt={item.name}
+                />
+                <p className="name_skill">{item.name}</p>
+              </li>
+            ))}
+          </ul>
+          <h1 className="label_to_jobDescription">Life at Company</h1>
+          <div className="life_at_company_container">
+            <p className="jobDescription lifeatdescription">
+              {lifeAtCompany.description}
+            </p>
+            <img
+              className="image_life_at_company"
+              alt="life at company"
+              src={lifeAtCompany.imageUrl}
+            />
           </div>
         </div>
-        <div className="location_employmentType_package_container">
-          {/* <div className="location_employmentType_container"> */}
-          <p className="locationOrEmploymentType_paraAnd_icon">
-            <MdLocationOn className="icon_locationOrEmployeeType" />
-            {location}
-          </p>
-          <p className="locationOrEmploymentType_paraAnd_icon">
-            <FaSuitcase className="icon_locationOrEmployeeType" />
-            {employmentType}
-          </p>
-          {/* </div> */}
-          <p className="package">{packagePerAnnum}</p>
-        </div>
-        <hr className="hr" />
-        <label className="label_to_jobDescription" htmlFor="jobDescription">
-          Description
-        </label>
-        <p id="jobDescription" className="jobDescription">
-          {jobDescription}
-        </p>
-      </div>
+        <h1 className="label_to_jobDescription">Similar Jobs</h1>
+        <ul className="ul_similar_jobs_container">
+          {similarJobs.map(similar => (
+            <SimilarJobItem key={similar.id} details={similar} />
+          ))}
+        </ul>
+      </>
     )
   }
 
